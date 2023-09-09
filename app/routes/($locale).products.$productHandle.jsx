@@ -135,6 +135,15 @@ export default function Product() {
                 <Heading as="h1" className="whitespace-normal">
                   {title}
                 </Heading>
+                <a
+                  href={product.metafield.value}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                <Button variant="primary">
+                  <Text>Buy Now </Text>
+                </Button>
+                </a>
                 {vendor && (
                   <Text className={'opacity-50 font-medium'}>{vendor}</Text>
                 )}
@@ -476,6 +485,9 @@ const PRODUCT_QUERY = `#graphql
           ...ProductVariantFragment
         }
       }
+      metafield(namespace:"my_fields", key:"affiliate_link") {
+          value
+        }
       seo {
         description
         title
