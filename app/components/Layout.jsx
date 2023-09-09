@@ -24,6 +24,7 @@ import {
 import {useIsHomePath} from '~/lib/utils';
 import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
+import logo from '../../public/logo-white.png';
 
 export function Layout({children, layout}) {
   const {headerMenu, footerMenu} = layout;
@@ -222,7 +223,7 @@ function DesktopHeader({isHome, menu, openCart, title}) {
     >
       <div className="flex gap-12">
         <Link className="font-bold" to="/" prefetch="intent">
-          {title}
+        <img src={logo} className="main-logo" alt={title} />
         </Link>
         <nav className="flex gap-8">
           {/* Top level menu items */}
