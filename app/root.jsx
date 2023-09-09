@@ -90,6 +90,7 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="google-site-verification" content="GHycfHhuHOZBLUoxHuu8hiiB7IU4XKZHzi6Z1A7Eg_U" />
         <Seo />
         <Meta />
         <Links />
