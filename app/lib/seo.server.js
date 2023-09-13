@@ -1,7 +1,7 @@
 function root({shop, url}) {
   return {
     title: shop?.name,
-    titleTemplate: '%s | Hydrogen Demo Store',
+    titleTemplate: '%s  ',
     description: truncate(shop?.description ?? ''),
     handle: '@shopify',
     url,
@@ -33,9 +33,9 @@ function root({shop, url}) {
 
 function home() {
   return {
-    title: 'Home',
-    titleTemplate: '%s | Hydrogen Demo Store',
-    description: 'The best place to buy snowboarding products',
+    title: 'Bags and Tablecloths',
+    titleTemplate: '%s | Best deals',
+    description: 'The best place for reusable bags and tablecloths offer',
     robots: {
       noIndex: false,
       noFollow: false,
@@ -208,7 +208,7 @@ function listCollections({collections, url}) {
   return {
     title: 'Collections',
     titleTemplate: '%s | Collections',
-    description: 'All hydrogen collections',
+    description: 'All Bags and Tablecloths collections',
     url,
     jsonLd: collectionsJsonLd({collections, url}),
   };

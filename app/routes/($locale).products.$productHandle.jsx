@@ -135,20 +135,20 @@ export default function Product() {
                 <Heading as="h1" className="whitespace-normal">
                   {title}
                 </Heading>
-                <a
-                  href={product.metafield.value}
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                <Button variant="primary">
-                  <Text>Buy Now </Text>
-                </Button>
-                </a>
                 {vendor && (
                   <Text className={'opacity-50 font-medium'}>{vendor}</Text>
                 )}
+                <br/>
+                <a
+                  href={product.metafield.value}
+                  rel="noreferrer"
+                  target="_blank">
+                <Button className="w-full shop-pay-button" variant="primary">
+                  <Text>Buy Now on Amazon </Text>
+                </Button>
+                </a>
               </div>
-              <Suspense fallback={<ProductForm variants={[]} />}>
+              {/*<Suspense fallback={<ProductForm variants={[]} />}>
                 <Await
                   errorElement="There was a problem loading related products"
                   resolve={variants}
@@ -159,7 +159,7 @@ export default function Product() {
                     />
                   )}
                 </Await>
-              </Suspense>
+                  </Suspense>*/}
               <div className="grid gap-4 py-4">
                 {descriptionHtml && (
                   <ProductDetail
