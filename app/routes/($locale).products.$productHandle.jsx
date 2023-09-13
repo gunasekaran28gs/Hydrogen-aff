@@ -143,6 +143,14 @@ export default function Product() {
                   href={product.metafield.value}
                   rel="noreferrer"
                   target="_blank">
+                <Button className="w-full inline-block rounded font-medium text-center py-3 px-6 text-white bg-blue-500" variant="primary">
+                  <Text>Check Price Now </Text>
+                </Button>
+                </a>
+                <a
+                  href={product.metafield.value}
+                  rel="noreferrer"
+                  target="_blank">
                 <Button className="w-full shop-pay-button" variant="primary">
                   <Text>Buy Now on Amazon </Text>
                 </Button>
