@@ -26,7 +26,7 @@ export const headers = routeHeaders;
 
 export async function loader({params, request, context}) {
   const paginationVariables = getPaginationVariables(request, {
-    pageBy: 8,
+    pageBy: 16,
   });
   const {collectionHandle} = params;
 
@@ -158,12 +158,16 @@ export default function Collection() {
         </SortFilter>
       </Section>
       <div>
-      {collection?.description && (
+      {collection?.descriptionHtml && (
           <div className="flex items-baseline justify-between w-full">
-            <div className="w-full">
-              <Text format width="" as="p" className="inline-block">
-                {collection.description}
-              </Text>
+            <div className="w-full gap-4 md:gap-8 grid p-6 md:p-8 lg:p-12 border-none">
+              <h4 className="text-2xl font-bold">Description:</h4>
+              {/* <Text format width="" as="div" className="">
+                {collection.descriptionHtml}
+              </Text> */}
+              <div
+                dangerouslySetInnerHTML={{__html: collection.descriptionHtml}}
+              />
             </div>
           </div>
         )}
@@ -190,6 +194,7 @@ const COLLECTION_QUERY = `#graphql
       handle
       title
       description
+      descriptionHtml
       seo {
         description
         title
