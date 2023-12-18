@@ -151,8 +151,8 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
       role="banner"
       className={`${
         isHome
-          ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
-          : 'bg-contrast/80 text-primary'
+          ? 'bg-primary dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
+          : 'bg-primary text-contrast'
       } flex lg:hidden items-center h-nav sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 px-4 md:px-8`}
     >
       <div className="flex items-center justify-start w-full gap-4">
@@ -215,8 +215,8 @@ function DesktopHeader({isHome, menu, openCart, title}) {
       role="banner"
       className={`${
         isHome
-          ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
-          : 'bg-primary/80 text-contrast'
+          ? 'bg-primary dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
+          : 'bg-primary text-contrast'
       } ${
         !isHome && y > 50 && ' shadow-lightHeader'
       } hidden h-nav lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`}
@@ -228,6 +228,7 @@ function DesktopHeader({isHome, menu, openCart, title}) {
         <nav className="flex gap-8">
           {/* Top level menu items */}
           {(menu?.items || []).map((item) => (
+            <div className="" key={item.id}>
             <Link
               key={item.id}
               to={item.to}
@@ -238,7 +239,32 @@ function DesktopHeader({isHome, menu, openCart, title}) {
               }
             >
               {item.title}
-            </Link>
+              
+            </Link><br/>
+            {/* {item?.items.length > 0 &&(
+                <>
+                  {(item?.items || []).map((submenu) => (
+                    <>
+                    <Link
+                      key={submenu.id}
+                      to={submenu.to}
+                      target={submenu.target}
+                      prefetch="intent"
+                      className={({isActive}) =>
+                        isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
+                      }
+                      >
+                        {console.log(item)}
+                      {submenu.title}
+                      </Link>
+                      
+                    </>
+                  )
+                  )}   
+                </>
+              )} */}
+              
+            </div>
           ))}
         </nav>
       </div>

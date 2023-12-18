@@ -124,10 +124,10 @@ export default function Product() {
   return (
     <>
       <Section className="px-0 md:px-8 lg:px-12">
-        <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-2">
           <ProductGallery
             media={media.nodes}
-            className="w-full lg:col-span-2"
+            className="w-full "
           />
           <div className="sticky md:-mb-nav md:top-nav md:-translate-y-nav md:h-screen md:pt-nav hiddenScroll md:overflow-y-scroll">
             <section className="flex flex-col w-full max-w-xl gap-8 p-6 md:mx-auto md:max-w-sm md:px-0">
@@ -151,9 +151,9 @@ export default function Product() {
                   href={product.metafield.value}
                   rel="noreferrer"
                   target="_blank">
-                <Button className="w-full shop-pay-button" variant="primary">
-                  <Text>Buy Now on Amazon </Text>
-                </Button>
+                    <Button className="w-full inline-block rounded font-medium text-center py-3 px-6 text-white bg-[#FFD814]" variant="primary">
+                      <Text className="text-black">Buy Now on Amazon </Text>
+                    </Button>
                 </a>
               </div>
               {/*<Suspense fallback={<ProductForm variants={[]} />}>
@@ -387,7 +387,7 @@ export function ProductForm({variants}) {
 
 function ProductDetail({title, content, learnMore}) {
   return (
-    <Disclosure key={title} as="div" className="grid w-full gap-2">
+    <Disclosure key={title} as="div" className="grid w-full gap-2" defaultOpen>
       {({open}) => (
         <>
           <Disclosure.Button className="text-left">
